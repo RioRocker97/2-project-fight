@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projectfight2/page/mainApp.dart';
-
-void main() => runApp(
-    MaterialApp(home: MainApp())
-);
+import 'package:projectfight2/backend/myserver.dart';
+void main() {
+  initserver();
+  runApp(
+      MaterialApp(home: MainApp())
+  );
+}

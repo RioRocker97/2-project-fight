@@ -6,7 +6,7 @@ class DisplayTextFront extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Text(
-      "Project Fight",
+      "Project Fight_2",
       style: GoogleFonts.baloo(
         textStyle: TextStyle(
           fontSize: 50.0,
