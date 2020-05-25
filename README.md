@@ -21,13 +21,13 @@ Project_Fight should have the following feature
 ## Project Status
 Initialize project :ok_hand:
 
-Understanding Mutithread and Socket Programming :hourglass_flowing_sand:
+Understanding Mutithread and Socket Programming :ok_hand:
 
-Understanding android app development :hourglass_flowing_sand:
+Understanding android app development(Using Flutter Framework) :ok_hand:
 
 Building app structure :writing_hand:
 
-Designing app UI/UX :x:
+Designing app UI/UX :writing_hand:
 
 Writing app Logic :x:
 
