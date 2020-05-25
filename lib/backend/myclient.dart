@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void respond() async{
-  Future<Socket> client = Socket.connect('localhost', 6969);
+  Future<Socket> client = Socket.connect('localhost',6969);
   client.then((Socket cli){
     cli.write("How do you do,server ?/");
     cli.listen((List<int> data) {

@@ -1,9 +1,9 @@
 import 'dart:io';
 
 void initserver() async{
-  Future<ServerSocket> Futureserver = ServerSocket.bind('localhost', 6969);
+  Future<ServerSocket> Futureserver = ServerSocket.bind('localhost',6969);
   Futureserver.then((ServerSocket server) async{
-    print("Server is opened!");
+    print("Server is opened! ${server.address} ${server.port}");
     server.listen((Socket client) {
       print('Connection from '
           '${client.remoteAddress.address}:${client.remotePort}');
