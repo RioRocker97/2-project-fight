@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projectfight2/backend/myArrayDatabase.dart';
+import 'package:projectfight2/backend/route.dart';
 import 'package:projectfight2/widget/display.dart';
 class RegisterPage extends StatefulWidget{
 
@@ -11,6 +13,7 @@ class RegisterPage extends StatefulWidget{
 }
 class RegisterState extends State<RegisterPage>{
   @override
+  AllUser data = new AllUser();
   int gender = 1;
   int age = 25;
   var user = TextEditingController();
@@ -52,6 +55,8 @@ class RegisterState extends State<RegisterPage>{
                       print("get pass :"+pass.text);
                       print("get gender :"+(gender==1?'Boy':'Girl'));
                       print("get age :"+age.toString());
+                      data.newUser(name.text,user.text,pass.text,gender,age);
+                      DashboardRoute(context, data);
                     });
                   })
                 ],

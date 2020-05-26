@@ -5,6 +5,6 @@ import 'package:projectfight2/page/register.dart';
 void main() {
   //initserver();
   runApp(
-      MaterialApp(home: RegisterPage())
+      MaterialApp(home: MainApp())
   );
 }

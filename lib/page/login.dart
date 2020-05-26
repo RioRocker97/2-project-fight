@@ -1,6 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:projectfight2/backend/myArrayDatabase.dart';
+import 'package:projectfight2/backend/route.dart';
 import 'package:projectfight2/widget/display.dart';
 
 class LoginPage extends StatefulWidget{
@@ -13,6 +14,7 @@ class LoginPage extends StatefulWidget{
 }
 class LoginState extends State<LoginPage>{
   @override
+  AllUser data = new AllUser();
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
     var user = TextEditingController();
@@ -32,7 +34,10 @@ class LoginState extends State<LoginPage>{
               Padding(padding: EdgeInsets.only(top: h/20)),
               ButtonFront("Login",50.0,(){
                 setState(() {
-
+                  print("Status: "+data.checkUser(user.text, pass.text).toString());
+                  if(data.checkUser(user.text, pass.text)){
+                    DashboardRoute(context,data);
+                  }
                 });
               })
             ],
