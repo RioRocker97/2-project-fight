@@ -50,6 +50,7 @@ class RegisterState extends State<RegisterPage>{
                   Padding(padding: EdgeInsets.only(top: h/30)),
                   ButtonFront("Register",50.0,(){
                     setState(() {
+                      FocusScope.of(context).unfocus();
                       print("get name :"+name.text);
                       print("get username :"+user.text);
                       print("get pass :"+pass.text);

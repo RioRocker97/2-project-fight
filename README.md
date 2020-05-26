@@ -14,9 +14,9 @@ Project_Fight has implemented Mutithread and Socket programming that had been pr
 Project_Fight is not my personal serious android development project due to short development time and lack of android application development knowledges.So, Please dont take my app too serious .
 
 Project_Fight should have the following feature
- - User Profile
- - Basic Chatting to set the date for a fight match
- - 2D mini-game for online fighting
+ - view User Profile (Mutithreading for faster processing)
+ - Basic Chatting to set the date for a fight match (Socket Programming)
+ - 2D mini-game for (fake) online fighting
 
 ## Project Status
 Initialize project :ok_hand:
@@ -29,7 +29,7 @@ Building app structure :writing_hand:
 
 Designing app UI/UX :writing_hand:
 
-Writing app Logic :x:
+Writing app Logic :writing_hand:
 
 Testing app :x:
 

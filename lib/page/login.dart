@@ -34,6 +34,7 @@ class LoginState extends State<LoginPage>{
               Padding(padding: EdgeInsets.only(top: h/20)),
               ButtonFront("Login",50.0,(){
                 setState(() {
+                  FocusScope.of(context).unfocus();
                   print("Status: "+data.checkUser(user.text, pass.text).toString());
                   if(data.checkUser(user.text, pass.text)){
                     DashboardRoute(context,data);

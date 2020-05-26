@@ -54,5 +54,14 @@ class AllUser{
     print("User not found");
     return false;
   }
+  List getOtherFighter(){
+    List fighter = new List();
+    for(int i=0;i<this.name.length;i++){
+      if(i!=this.CurrentUser){
+        fighter.add(this.name[i]);
+      }
+    }
+    return fighter;
+  }
 
 }

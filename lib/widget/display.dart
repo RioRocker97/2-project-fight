@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectfight2/backend/route.dart';
 import 'package:projectfight2/page/register.dart';
 
 class DisplayTextFront extends StatelessWidget{
@@ -20,7 +21,23 @@ class DisplayTextFront extends StatelessWidget{
     );
   }
 }
-
+class DisplayTextDash extends StatelessWidget{
+  DisplayTextDash(this.text);
+  String text;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Text(
+      text,
+      style: GoogleFonts.baloo(
+          textStyle: TextStyle(
+              fontSize: 25.0,
+              color: Colors.lightBlueAccent
+          )
+      ),
+    );
+  }
+}
 class ButtonFront extends StatelessWidget{
   ButtonFront(this.text,this.size,this.func);
   String text;
@@ -157,6 +174,93 @@ class SlideSelect extends StatelessWidget{
           ),
         ],
       )
+    );
+  }
+}
+class FighterCard extends StatelessWidget{
+  FighterCard(this.text);
+  String text;
+  @override
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+    return Card(
+      color: Colors.blueGrey,
+      child: InkWell(
+        splashColor: Colors.red,
+        onTap: (){},
+        child: Container(
+          padding: EdgeInsets.only(top: 30.0,bottom: 30.0,left: 10.0,right: 10.0),
+          width: w,
+          child: Column(
+            children: [
+              Container(
+                width: 100.0,
+                height: 100.0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50.0),
+                  child: Image(image: AssetImage('public/profile.png'),),
+                ),
+              ),
+              Text(text,style: GoogleFonts.baloo(textStyle: TextStyle(
+                  fontSize: 20.0,color: Colors.red
+              ))),
+              Text("Ready to Fight!",style: GoogleFonts.baloo(textStyle: TextStyle(
+                  fontSize: 30.0,color: Colors.red
+              )))
+            ],
+          ),
+        ),
+      )
+    );
+  }
+}
+class DashboardButton extends StatelessWidget{
+  DashboardButton(this.url,this.func,this.size);
+  String url;
+  Function func;
+  double size;
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      width: size,
+      height: size,
+      padding: EdgeInsets.all(10.0),
+      child: InkWell(
+        onTap: func,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(size/3),
+          child: Image(image: AssetImage(url),),
+        ),
+      ),
+    );
+  }
+}
+class MainDashboardButton extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
+    return Container(
+      width: w,
+      height: 2*h/10,
+      child: Row(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 10.0),
+            child: DashboardButton('public/own.png',(){DProfileRoute(context);},100.0),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 10.0),
+            child: DashboardButton('public/fight.png',(){},150.0),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 10.0),
+            child: DashboardButton('public/chat.png',(){DChatRoute(context);},100.0),
+          )
+        ],
+      ),
     );
   }
 }
