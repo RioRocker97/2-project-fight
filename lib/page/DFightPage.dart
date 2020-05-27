@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:projectfight2/backend/myArrayDatabase.dart';
 import 'package:projectfight2/backend/myclient.dart';
@@ -38,6 +39,12 @@ class FightPage extends State<DFightPage>{
             Container(
               width: w,
               height: 8*h/10,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('public/full_body.png'),
+                  fit: BoxFit.cover
+                )
+              ),
               child: Column(
                 children: [
                   Expanded(
@@ -68,33 +75,52 @@ class FightPage extends State<DFightPage>{
                           }
                         });
                       },
-                      child: Container(
-                        color: Colors.grey,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 10.0),
-                              child: new CircularPercentIndicator(
-                                radius: 100.0,
-                                animation: true,
-                                lineWidth: 15.0,
-                                percent: (red<0.0?0.0:red),
-                                center: new Text(((red<0?0.0:red)*100).toInt().toString()+"%"),
-                                progressColor: Colors.red,
+                      child: Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          color: Colors.yellow,
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 10.0),
+                                child: new CircularPercentIndicator(
+                                  radius: 100.0,
+                                  animation: true,
+                                  lineWidth: 15.0,
+                                  percent: (red<0.0?0.0:red),
+                                  center: new Text(
+                                    ((red<0?0.0:red)*100).toInt().toString()+"%",
+                                      style: GoogleFonts.baloo(
+                                          textStyle: TextStyle(
+                                              fontSize: 20.0,
+                                              color: Colors.red
+                                          )
+                                      )
+                                  ),
+                                  progressColor: Colors.red,
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: w/2.25),
-                              child: new CircularPercentIndicator(
-                                radius: 100.0,
-                                animation: true,
-                                lineWidth: 15.0,
-                                percent: (blue<0?0.0:blue),
-                                center: new Text(((blue<0?0.0:blue)*100).toInt().toString()+"%"),
-                                progressColor: Colors.blue,
-                              ),
-                            )
-                          ],
+                              Padding(
+                                padding: EdgeInsets.only(left: w/2.25),
+                                child: new CircularPercentIndicator(
+                                  radius: 100.0,
+                                  animation: true,
+                                  lineWidth: 15.0,
+                                  percent: (blue<0?0.0:blue),
+                                  center: new Text(
+                                    ((blue<0?0.0:blue)*100).toInt().toString()+"%",
+                                    style: GoogleFonts.baloo(
+                                      textStyle: TextStyle(
+                                        fontSize: 20.0,
+                                        color: Colors.blue
+                                      )
+                                    ),
+                                  ),
+                                  progressColor: Colors.blue,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     )
@@ -127,8 +153,11 @@ class FightPage extends State<DFightPage>{
                           }
                         });
                       },
-                      child: Container(
-                        color: Colors.green,
+                      child: Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          color: Colors.green,
+                        ),
                       ),
                     )
                   ),
@@ -160,9 +189,12 @@ class FightPage extends State<DFightPage>{
                           }
                         });
                       },
-                      child: Container(
-                        color: Colors.blue,
-                      ),
+                      child: Opacity(
+                        opacity: 0.7,
+                        child: Container(
+                          color: Colors.blue,
+                        ),
+                      )
                     )
                   ),
                 ],
