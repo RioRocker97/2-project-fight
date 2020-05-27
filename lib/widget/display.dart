@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectfight2/backend/myArrayDatabase.dart';
 import 'package:projectfight2/backend/route.dart';
 import 'package:projectfight2/page/register.dart';
 
@@ -178,7 +179,8 @@ class SlideSelect extends StatelessWidget{
   }
 }
 class FighterCard extends StatelessWidget{
-  FighterCard(this.text);
+  FighterCard(this.text,this.aydata);
+  AllUser aydata;
   String text;
   @override
   Widget build(BuildContext context) {
@@ -188,7 +190,7 @@ class FighterCard extends StatelessWidget{
       color: Colors.blueGrey,
       child: InkWell(
         splashColor: Colors.red,
-        onTap: (){},
+        onTap: (){DFightRoute(context,aydata);},
         child: Container(
           padding: EdgeInsets.only(top: 30.0,bottom: 30.0,left: 10.0,right: 10.0),
           width: w,
@@ -238,6 +240,8 @@ class DashboardButton extends StatelessWidget{
   }
 }
 class MainDashboardButton extends StatelessWidget{
+  MainDashboardButton({this.userData});
+  AllUser userData;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -249,15 +253,15 @@ class MainDashboardButton extends StatelessWidget{
         children: [
           Padding(
             padding: EdgeInsets.only(left: 10.0),
-            child: DashboardButton('public/own.png',(){DProfileRoute(context);},100.0),
+            child: DashboardButton('public/logout.png',(){MainRoute(context);},100.0),
           ),
           Padding(
             padding: EdgeInsets.only(left: 10.0),
-            child: DashboardButton('public/fight.png',(){},150.0),
+            child: DashboardButton('public/fight.png',(){DashboardRoute(context,userData);},150.0),
           ),
           Padding(
             padding: EdgeInsets.only(left: 10.0),
-            child: DashboardButton('public/chat.png',(){DChatRoute(context);},100.0),
+            child: DashboardButton('public/own.png',(){DProfileRoute(context,userData);},100.0),
           )
         ],
       ),

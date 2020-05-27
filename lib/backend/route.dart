@@ -1,15 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:projectfight2/backend/myArrayDatabase.dart';
-import 'package:projectfight2/page/DChatPage.dart';
+import 'package:projectfight2/page/DFightPage.dart';
 import 'package:projectfight2/page/DProfilePage.dart';
 import 'package:projectfight2/page/login.dart';
+import 'package:projectfight2/page/mainApp.dart';
 import 'package:projectfight2/page/mainDashboard.dart';
 import 'package:projectfight2/page/register.dart';
 
 Function LoginRoute(BuildContext context){
   Navigator.pushReplacement(context,
       MaterialPageRoute(builder: (context) => LoginPage())
+  );
+}
+Function MainRoute(BuildContext context){
+  Navigator.pushReplacement(context,
+      MaterialPageRoute(builder: (context) => MainApp())
   );
 }
 Function RegisterRoute(BuildContext context){
@@ -24,13 +30,17 @@ Function DashboardRoute(BuildContext context,AllUser data){
       ))
   );
 }
-Function DProfileRoute(BuildContext context){
+Function DProfileRoute(BuildContext context,AllUser data){
   Navigator.pushReplacement(context,
-      MaterialPageRoute(builder: (context) => DProfilePage())
+      MaterialPageRoute(builder: (context) => DProfilePage(
+        mydata: data,
+      ))
   );
 }
-Function DChatRoute(BuildContext context){
+Function DFightRoute(BuildContext context,AllUser data){
   Navigator.pushReplacement(context,
-      MaterialPageRoute(builder: (context) => DChatPage())
+      MaterialPageRoute(builder: (context) => DFightPage(
+        mydata: data,
+      ))
   );
 }

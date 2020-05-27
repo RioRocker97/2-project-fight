@@ -34,10 +34,10 @@ class DashboardState extends State<MainDashboard>{
               width: w,
               height: 7*h/10,
               child: ListView(
-                children: player.map((play)=> new FighterCard(play)).toList(),
+                children: player.map((play)=> new FighterCard(play,aydata)).toList(),
               ),
             ),
-            MainDashboardButton()
+            MainDashboardButton(userData: aydata)
           ],
         ),
       )

@@ -14,9 +14,9 @@ Project_Fight has implemented Mutithread and Socket programming that had been pr
 Project_Fight is not my personal serious android development project due to short development time and lack of android application development knowledges.So, Please dont take my app too serious .
 
 Project_Fight should have the following feature
- - view User Profile (Mutithreading for faster processing)
- - Basic Chatting to set the date for a fight match (Socket Programming)
- - 2D mini-game for (fake) online fighting
+ - view User Profile (Mutithreading for faster processing) :ok_hand:
+ - Basic fighting match (Socket Programming) ** Chatiing had been dropped out :writing_hand:
+ - 2D mini-game for (fake) online fighting :writing_hand:
 
 ## Project Status
 Initialize project :ok_hand:
@@ -25,15 +25,15 @@ Understanding Mutithread and Socket Programming :ok_hand:
 
 Understanding android app development(Using Flutter Framework) :ok_hand:
 
-Building app structure :writing_hand:
+Building app structure :ok_hand:
 
-Designing app UI/UX :writing_hand:
+Designing app UI/UX :ok_hand:
 
 Writing app Logic :writing_hand:
 
-Testing app :x:
+Testing app :writing_hand:
 
-Try using app :x:
+Try using app :writing_hand:
 
 Finished !  :x:
 
