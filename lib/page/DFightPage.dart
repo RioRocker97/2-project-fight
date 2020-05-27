@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:projectfight2/backend/myArrayDatabase.dart';
+import 'package:projectfight2/backend/myclient.dart';
+import 'package:projectfight2/backend/myserver.dart';
+import 'package:projectfight2/backend/route.dart';
 import 'package:projectfight2/widget/display.dart';
-
 class DFightPage extends StatefulWidget{
   DFightPage({this.mydata});
   AllUser mydata;
@@ -15,12 +17,20 @@ class DFightPage extends StatefulWidget{
 class FightPage extends State<DFightPage>{
   FightPage(this.data);
   AllUser data;
-  double red = 1.0;
   double blue = 1.0;
+  double red ;
+  HP redC = new HP();
+  Function gameRun(){
+    setState(() {
+      redC.initserver();
+      red = redC.hp;
+    });
+  }
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
+    gameRun();
     return Scaffold(
       body: Center(
         child: Column(
@@ -34,7 +44,28 @@ class FightPage extends State<DFightPage>{
                     child: InkWell(
                       onTap: (){
                         setState(() {
-                          red -= 0.1;
+                          respond('2/');
+                          blue-=0.2;
+                          if(blue <= 0.0 || red <= 0.0){
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext con){
+                                  return AlertDialog(
+                                    title: Text("Game Over!"),
+                                    content: Text((red<=0.0)?'Blue Win !':'Red Win !'),
+                                    actions: [
+                                      FlatButton(
+                                        child: Text("Back to Dashboard"),
+                                        onPressed: (){
+                                          redC = new HP();
+                                          DashboardRoute(context, data);
+                                        },
+                                      )
+                                    ],
+                                  );
+                                }
+                            );
+                          }
                         });
                       },
                       child: Container(
@@ -47,8 +78,8 @@ class FightPage extends State<DFightPage>{
                                 radius: 100.0,
                                 animation: true,
                                 lineWidth: 15.0,
-                                percent: red,
-                                center: new Text((red*100).toInt().toString()+"%"),
+                                percent: (red<0.0?0.0:red),
+                                center: new Text(((red<0?0.0:red)*100).toInt().toString()+"%"),
                                 progressColor: Colors.red,
                               ),
                             ),
@@ -58,8 +89,8 @@ class FightPage extends State<DFightPage>{
                                 radius: 100.0,
                                 animation: true,
                                 lineWidth: 15.0,
-                                percent: blue,
-                                center: new Text((blue*100).toInt().toString()+"%"),
+                                percent: (blue<0?0.0:blue),
+                                center: new Text(((blue<0?0.0:blue)*100).toInt().toString()+"%"),
                                 progressColor: Colors.blue,
                               ),
                             )
@@ -72,7 +103,28 @@ class FightPage extends State<DFightPage>{
                     child: InkWell(
                       onTap: (){
                         setState(() {
+                          respond('3/');
                           blue-=0.1;
+                          if(blue <= 0.0 || red <= 0.0){
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext con){
+                                  return AlertDialog(
+                                    title: Text("Game Over!"),
+                                    content: Text((red<=0.0)?'Blue Win !':'Red Win !'),
+                                    actions: [
+                                      FlatButton(
+                                        child: Text("Back to Dashboard"),
+                                        onPressed: (){
+                                          redC = new HP();
+                                          DashboardRoute(context, data);
+                                        },
+                                      )
+                                    ],
+                                  );
+                                }
+                            );
+                          }
                         });
                       },
                       child: Container(
@@ -82,7 +134,32 @@ class FightPage extends State<DFightPage>{
                   ),
                   Expanded(
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          respond('1/');
+                          blue-=0.05;
+                          if(blue <= 0.0 || red <= 0.0){
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext con){
+                                  return AlertDialog(
+                                    title: Text("Game Over!"),
+                                    content: Text((red<=0.0)?'Blue Win !':'Red Win !'),
+                                    actions: [
+                                      FlatButton(
+                                        child: Text("Back to Dashboard"),
+                                        onPressed: (){
+                                          redC = new HP();
+                                          DashboardRoute(context, data);
+                                        },
+                                      )
+                                    ],
+                                  );
+                                }
+                            );
+                          }
+                        });
+                      },
                       child: Container(
                         color: Colors.blue,
                       ),

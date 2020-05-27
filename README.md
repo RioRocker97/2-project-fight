@@ -14,7 +14,7 @@ Project_Fight has implemented Mutithread and Socket programming that had been pr
 Project_Fight is not my personal serious android development project due to short development time and lack of android application development knowledges.So, Please dont take my app too serious .
 
 Project_Fight should have the following feature
- - view User Profile (Mutithreading for faster processing) :ok_hand:
+ - view User Profile (Mutithreading for faster processing **Use Asynchronus Programming instead) :ok_hand:
  - Basic fighting match (Socket Programming) ** Chatiing had been dropped out :writing_hand:
  - 2D mini-game for (fake) online fighting :writing_hand:
 
@@ -29,11 +29,12 @@ Building app structure :ok_hand:
 
 Designing app UI/UX :ok_hand:
 
-Writing app Logic :writing_hand:
+Writing app Logic :ok_hand:
 
 Testing app :writing_hand:
 
 Try using app :writing_hand:
 
-Finished !  :x:
+Finished !  :writing_hand:
 
+## Result
