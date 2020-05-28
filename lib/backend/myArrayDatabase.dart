@@ -13,7 +13,7 @@ class AllUser{
   ];
   List gender = [
     1,1,1,2,
-    2,1,2,1
+    2,2,2,1
   ];
   List age = [
     25,27,35,20,

@@ -31,10 +31,10 @@ Designing app UI/UX :ok_hand:
 
 Writing app Logic :ok_hand:
 
-Testing app :writing_hand:
+Testing app :ok_hand:
 
-Try using app :writing_hand:
+Try using app :ok_hand:
 
-Finished !  :writing_hand:
+Finished !  :ok_hand:
 
 ## Result

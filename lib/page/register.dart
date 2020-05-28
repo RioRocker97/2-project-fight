@@ -23,6 +23,13 @@ class RegisterState extends State<RegisterPage>{
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
+          height: h,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('public/regular.jpg'),
+                  fit: BoxFit.cover
+              )
+          ),
           child: SingleChildScrollView(
             child: Center(
               child: Column(

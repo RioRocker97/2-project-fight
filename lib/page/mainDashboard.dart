@@ -23,22 +23,37 @@ class DashboardState extends State<MainDashboard>{
     List player = aydata.getOtherFighter();
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-            Container(
-              height: h/10,
-              padding: EdgeInsets.all(20.0),
-              child: DisplayTextDash("Welcome,Fighter "+aydata.name[aydata.CurrentUser]),
-            ),
-            Container(
-              width: w,
-              height: 7*h/10,
-              child: ListView(
-                children: player.map((play)=> new FighterCard(play,aydata)).toList(),
+        child: Container(
+          width: w,
+          height: h,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('public/regular.jpg'),
+                  fit: BoxFit.cover
+              )
+          ),
+          child: Column(
+            children: [
+              Container(
+                height: h/10,
+                padding: EdgeInsets.only(top:10.0),
+                child: Column(
+                  children: [
+                    DisplayTextDash("Welcome,Fighter"),
+                    DisplayTextDash(aydata.name[aydata.CurrentUser])
+                  ],
+                ),
               ),
-            ),
-            MainDashboardButton(userData: aydata)
-          ],
+              Container(
+                width: w,
+                height: 7*h/10,
+                child: ListView(
+                  children: player.map((play)=> new FighterCard(play,aydata)).toList(),
+                ),
+              ),
+              MainDashboardButton(userData: aydata)
+            ],
+          ),
         ),
       )
     );

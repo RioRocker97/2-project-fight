@@ -16,7 +16,7 @@ class DisplayTextFront extends StatelessWidget{
       style: GoogleFonts.baloo(
         textStyle: TextStyle(
           fontSize: 50.0,
-          color: Colors.lightBlueAccent
+          color: Colors.white
         )
       ),
     );
@@ -32,8 +32,8 @@ class DisplayTextDash extends StatelessWidget{
       text,
       style: GoogleFonts.baloo(
           textStyle: TextStyle(
-              fontSize: 25.0,
-              color: Colors.lightBlueAccent
+              fontSize: 20.0,
+              color: Colors.white
           )
       ),
     );
@@ -49,11 +49,12 @@ class ButtonFront extends StatelessWidget{
     // TODO: implement build
     return FlatButton(
       child: Text(text,style: GoogleFonts.baloo(
-        fontSize: size-20.0,
+        fontSize: size-15.0,
         color: Colors.deepOrange,
       ),),
-      padding: EdgeInsets.only(top:10.0,bottom: 10.0,left: size*2,right: size*2),
-      color: Colors.blueGrey,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+      padding: EdgeInsets.only(top:5.0,bottom: 5.0,left: size*1.7,right: size*1.7),
+      color: Colors.greenAccent,
       onPressed: func,
     );
   }
@@ -92,8 +93,11 @@ class inputText extends StatelessWidget{
         controller: control,
         decoration: InputDecoration(
             hintText: word,
+            hintStyle: GoogleFonts.baloo(textStyle: TextStyle(
+              fontSize: 20.0,color: Colors.white
+            )),
             filled: true,
-            fillColor: Colors.blueGrey,
+            fillColor: Colors.greenAccent,
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(w/16)
             ),
@@ -160,6 +164,8 @@ class SlideSelect extends StatelessWidget{
             child: Container(
               width: w/1.5,
               child: Slider(
+                activeColor: Colors.yellow,
+                inactiveColor: Colors.amberAccent,
                 value: current.toDouble(),
                 min: 15.0,
                 max: 80.0,

@@ -22,6 +22,12 @@ class LoginState extends State<LoginPage>{
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('public/regular.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: [

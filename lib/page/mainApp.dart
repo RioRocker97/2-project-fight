@@ -16,6 +16,12 @@ class MainState extends State<MainApp>{
     return Scaffold(
       body: Container(
         height: h,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('public/front.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
         child: Center(
           child: Column(
             children: [
