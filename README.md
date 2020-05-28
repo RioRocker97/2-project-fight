@@ -38,3 +38,10 @@ Try using app :ok_hand:
 Finished !  :ok_hand:
 
 ## Result
+![Front page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res1.png)
+![Login page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res2.png)
+![Register page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res3.png)
+![Dashboard page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res4.png)
+![Profile page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res5.png)
+
+![Game page](https://github.com/RioRocker97/2-project-fight/blob/master/result/res6.png)
